@@ -6,7 +6,7 @@
     <!-- Breadcrumbs Start -->
     <div class="rs-breadcrumbs breadcrumbs-overlay">
         <div class="breadcrumbs-img">
-            <img src="{{ asset('assets/images/breadcrumbs/2.jpg') }}" alt="Breadcrumbs Image" />
+            <img src="{{ asset('assets/images/breadcrumbs/1.webp') }}" alt="Breadcrumbs Image" />
         </div>
         <div class="breadcrumbs-text white-color">
             <h1 class="page-title">Su di noi !</h1>
@@ -46,7 +46,7 @@
                         <div class="col-md-4 sm-mb-30">
                             <div class="counter-item two">
                                 <h2 class="number rs-count">10</h2>
-                                <h4 class="title mb-0">Anni di esperienza</h4>
+                                <h4 class="title mb-0">Anni di <br> esperienza</h4>
                             </div>
                         </div>
                         <div class="col-md-4">

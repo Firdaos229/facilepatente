@@ -6,7 +6,7 @@
     <!-- Breadcrumbs Start -->
     <div class="rs-breadcrumbs breadcrumbs-overlay">
         <div class="breadcrumbs-img">
-            <img src="{{ asset('assets/images/breadcrumbs/2.jpg') }}" alt="Breadcrumbs Image" />
+            <img src="{{ asset('assets/images/breadcrumbs/1.webp') }}" alt="Breadcrumbs Image" />
         </div>
         <div class="breadcrumbs-text white-color">
             <h1 class="page-title">Prendete la patente per la moto!</h1>
@@ -17,24 +17,24 @@
     <!-- About Section Start -->
     <div id="rs-about" class="rs-about style1 pt-50 pb-100 md-pt-70 md-pb-70">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
-                    <div class="img-part">
-                        <img class=""
-                            src="{{ asset('assets/images/about/Chefe_fala_com_a_equipe_sobre_atendimento_ao_cliente_ou_telemarketing.jpg') }}"
-                            alt="About Image" />
-                    </div>
-                </div>
-                <div class="col-lg-6 pr-70 md-pr-15">
-                    <div class="sec-title">
-                        <h2 class="title">
+            <div class="col align-items-center">
+                <div class="col-lg-12 pr-70 md-pr-15">
+                    <div>
+                        <h2 class=" text-center">
                             Esplora le nostre patenti <br />
                             per moto
                         </h2>
-                        <div class="desc">
+                        <p class="desc text-center">
                             Trovate il corso più adatto alle vostre esigenze di guida
 
-                        </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
+                    <div class="img-part">
+                        <img class=""
+                            src="{{ asset('assets/images/about/motorcyclist-passing-driving-exam-at-private-schoo-2024-12-01-12-17-42-utc.jpg') }}"
+                            alt="About Image" />
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@
     <!-- Breadcrumbs Start -->
     <div class="rs-breadcrumbs breadcrumbs-overlay">
         <div class="breadcrumbs-img">
-            <img src="{{ asset('assets/images/breadcrumbs/2.jpg') }}" alt="Breadcrumbs Image" />
+            <img src="{{ asset('assets/images/breadcrumbs/1.webp') }}" alt="Breadcrumbs Image" />
         </div>
         <div class="breadcrumbs-text white-color">
             <h1 class="page-title">Le nostre tariffe competitive !</h1>
@@ -312,8 +312,8 @@
                 </div>
                 <div class="col-lg-6 padding-0 col-md-12">
                     <div class="img-part">
-                        <img class=""
-                            src="{{ asset('assets/images/about/motorcyclist-passing-driving-exam-at-private-schoo-2024-12-01-12-17-42-utc.jpg') }}"
+        
+                            <img class="" src="{{ asset('assets/images/about/permis.webp') }}"
                             alt="About Image" />
                     </div>
                 </div>

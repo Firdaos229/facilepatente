@@ -6,7 +6,7 @@
     <!-- Breadcrumbs Start -->
     <div class="rs-breadcrumbs breadcrumbs-overlay">
         <div class="breadcrumbs-img">
-            <img src="{{ asset('assets/images/breadcrumbs/2.jpg') }}" alt="Breadcrumbs Image" />
+            <img src="{{ asset('assets/images/breadcrumbs/1.webp') }}" alt="Breadcrumbs Image" />
         </div>
         <div class="breadcrumbs-text white-color">
             <h1 class="page-title">È facile ottenere la licenza desiderata da Facile Patente !</h1>
@@ -240,7 +240,7 @@
 
     <div class=" ">
         <div class="img-part">
-            <img class="" src="{{ asset('assets/images/about/View 1.jpg') }}" alt="About Image" />
+            <img class="" src="{{ asset('assets/images/banner/home12/Home 2.png') }}" alt="About Image" />
         </div>
     </div>
 
