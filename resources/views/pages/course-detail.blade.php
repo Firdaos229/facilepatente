@@ -52,7 +52,6 @@
             <div class="row">
                 <div class="col-lg-6 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
                     <div class="img-part">
-                        <img class="" src="{{ asset('assets/images/about/PHOTO-2025-01-20-22-25-36.jpg') }}" alt="About Image" />
                         <img class="" src="{{ asset('assets/images/about/View 1.jpg') }}" alt="About Image" />
                     </div>
                 </div>
@@ -237,11 +236,5 @@
     </div>
     <!-- faq Section Start -->
 
-
-    <div class=" ">
-        <div class="img-part">
-            <img class="" src="{{ asset('assets/images/banner/home12/Home 2.png') }}" alt="About Image" />
-        </div>
-    </div>
 
 @endsection

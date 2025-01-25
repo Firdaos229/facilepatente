@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-6 pl-60 order-last">
                     <div class="img-part">
-                        <img src="{{ asset('assets/images/banner/home12/(1).webp') }}" alt="" />
+                        <img src="{{ asset('assets/images/banner/home12/Home_4-removebg-preview.png') }}" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 pr-0">
