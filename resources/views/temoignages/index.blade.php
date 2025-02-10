@@ -15,17 +15,17 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">LISTE DES DIFFÉRENTS TÉMOIGNAGES</h2>
+                    <h2 class="pageheader-title">ELENCO DELLE DIVERSE TESTIMONIANZE</h2>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="{{ route('dashboard') }}" class="breadcrumb-link">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}" class="breadcrumb-link">Pannello di controllo</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="#" class="breadcrumb-link">Gestion des Témoignages</a>
+                                    <a href="#" class="breadcrumb-link">Gestione delle testimonianze</a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Liste des témoignages</li>
+                                <li class="breadcrumb-item active" aria-current="page">Elenco delle testimonianze</li>
                             </ol>
                         </nav>
                     </div>
@@ -36,7 +36,7 @@
         <!-- Bouton Ajouter -->
         <div class="row mb-3">
             <button class="btn btn-space btn-primary">
-                <a href="{{ route('temoignages.create') }}" class="text-white">Ajouter un nouveau témoignage</a>
+                <a href="{{ route('temoignages.create') }}" class="text-white">Aggiungi una nuova testimonianza</a>
             </button>
         </div>
 
@@ -44,16 +44,16 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <h5 class="card-header">Tous les témoignages</h5>
+                    <h5 class="card-header">Tutte le testimonianze</h5>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered">
                                 <thead class="bg-light">
                                     <tr>
-                                        <th>Nom</th>
-                                        <th>Photo</th>
-                                        <th>Commentaire</th>
-                                        <th>Actions</th>
+                                        <th>Nome</th>
+                                        <th>Foto</th>
+                                        <th>Commento</th>
+                                        <th>Azioni</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,7 +82,7 @@
                                                         <!-- Modifier -->
                                                         <a href="{{ route('temoignages.edit', $temoignage) }}"
                                                             class="dropdown-item mb-2 btn btn-info">
-                                                            Modifier
+                                                            Per modificare
                                                         </a>
 
                                                         <!-- Supprimer -->
@@ -92,7 +92,7 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="dropdown-item btn btn-danger">
-                                                                Supprimer
+                                                                ELIMINARE
                                                             </button>
                                                         </form>
                                                     </div>

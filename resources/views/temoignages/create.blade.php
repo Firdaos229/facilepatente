@@ -7,13 +7,13 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">AJOUTEZ UN NOUVEAU TEMOIGNAGE</h2>
+                    <h2 class="pageheader-title">AGGIUNGI UNA NUOVA TESTIMONIAL</h2>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"
-                                        class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Ajouter un témoignage</li>
+                                        class="breadcrumb-link">Pannello di controllo</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Aggiungi una testimonianza</li>
                             </ol>
                         </nav>
                     </div>
@@ -41,31 +41,31 @@
                         <form action="{{ route('temoignages.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Nom de l'utilisateur</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Nome utente</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input type="text" name="nom_utulisateur" class="form-control input-md inputNew"
-                                        placeholder="Entrez le nom de l'utilisateur" required>
+                                        placeholder="Inserisci il nome utente" required>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Photo de l'utilisateur</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Foto dell'utente</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input type="file" name="photo_utulisateur" class="form-control input-md inputNew"
-                                        placeholder="photo de l'utilisateur" required>
+                                        placeholder="Foto dell'utente" required>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Commentaire</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Commento</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <textarea name="commentaire" class="form-control input-md inputNew" placeholder="Entrez le commentaire du client"
+                                    <textarea name="commentaire" class="form-control input-md inputNew" placeholder="Inserisci il commento del cliente"
                                         required></textarea>
                                 </div>
                             </div>
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Ajouter</button>
+                                    <button type="submit" class="btn btn-space btn-primary">Aggiungere</button>
                                     <button class="btn btn-space btn-secondary"><a href="{{ route('temoignages.index') }}"
-                                            class="text-white">Voir tous les témoignages</a></button>
+                                            class="text-white">Vedi tutte le testimonianze</a></button>
                                 </div>
                             </div>
                         </form>

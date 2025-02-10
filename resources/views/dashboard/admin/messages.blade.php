@@ -3,13 +3,12 @@
 @section('title', 'Facile Patente - Messages')
 
 @section('content')
-    <div class="container-fluid  dashboard-content">
+    <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Post Degli Utenti</h2>
                     <div class="page-breadcrumb">
-
                     </div>
                 </div>
             </div>
@@ -29,7 +28,6 @@
                 </ul>
             @endif
 
-
             <table class="table">
                 <thead>
                     <tr>
@@ -38,6 +36,7 @@
                         <th>Telefono</th>
                         <th>Messaggio</th>
                         <th>Data</th>
+                        <th>Azione</th> <!-- Added an Action column -->
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +47,18 @@
                             <td>{{ $message->phone }}</td>
                             <td>{{ $message->message }}</td>
                             <td>{{ $message->created_at }}</td>
+                            <td>
+                                <!-- Action buttons to manage the message -->
+                                <form action="{{ route('messages.markAsRead', $message->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary btn-sm">Mark as Read</button>
+                                </form>
+                                <form action="{{ route('messages.delete', $message->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

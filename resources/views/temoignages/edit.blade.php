@@ -7,17 +7,17 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">MODIFIER LE TÉMOIGNAGE</h2>
+                    <h2 class="pageheader-title">MODIFICA TESTIMONIANZA</h2>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="{{ route('dashboard') }}" class="breadcrumb-link">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}" class="breadcrumb-link">Pannello di controllo</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="#" class="breadcrumb-link">Gestion des Témoignages</a>
+                                    <a href="#" class="breadcrumb-link">Gestione delle testimonianze</a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Modifier ce témoignage</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modifica questa storia</li>
                             </ol>
                         </nav>
                     </div>
@@ -40,8 +40,8 @@
                             @method('PUT')
 
                             <div class="form-group row">
-                                <label for="nom_utulisateur" class="col-12 col-sm-3 col-form-label text-sm-right">Nom de
-                                    l'utilisateur</label>
+                                <label for="nom_utulisateur" class="col-12 col-sm-3 col-form-label text-sm-right">Nome di
+                                    l'utente</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input type="text" name="nom_utulisateur" class="form-control input-md"
                                         value="{{ $temoignage->nom_utulisateur }}" required>
@@ -49,8 +49,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="photo_utulisateur" class="col-12 col-sm-3 col-form-label text-sm-right">Photo de
-                                    l'utilisateur</label>
+                                <label for="photo_utulisateur" class="col-12 col-sm-3 col-form-label text-sm-right">Foto di
+                                    l'utente</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input type="file" name="photo_utulisateur" class="form-control input-md">
                                     @if ($temoignage->photo_utulisateur)
@@ -62,7 +62,7 @@
 
                             <div class="form-group row">
                                 <label for="commentaire"
-                                    class="col-12 col-sm-3 col-form-label text-sm-right">Commentaire</label>
+                                    class="col-12 col-sm-3 col-form-label text-sm-right">Commento</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <textarea name="commentaire" class="form-control input-md" required>{{ $temoignage->commentaire }}</textarea>
                                 </div>
@@ -70,9 +70,9 @@
 
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Mettre à jour</button>
+                                    <button type="submit" class="btn btn-space btn-primary">Per aggiornare</button>
                                     <a href="{{ route('temoignages.index') }}"
-                                        class="btn btn-space btn-secondary text-white">Annuler</a>
+                                        class="btn btn-space btn-secondary text-white">Cancellare</a>
                                 </div>
                             </div>
                         </form>

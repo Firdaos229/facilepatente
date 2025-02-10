@@ -100,3 +100,5 @@ Route::post('/check-serial', [SerialNumberController::class, 'checkSerial']);
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/admin/messages', [ContactController::class, 'index'])->name('dashboard.admin.messages');
+Route::post('/messages/{id}/mark-as-read', [ContactController::class, 'markAsRead'])->name('messages.markAsRead');
+Route::delete('/messages/{id}', [ContactController::class, 'delete'])->name('messages.delete');
