@@ -37,7 +37,7 @@
                             <div class="card-body">
                                 <div class="d-inline-block">
                                     <h5 class="text-muted">Nombre d'utilisateurs</h5>
-                                    <h2 class="mb-0">{{$nombreUtulisateurs ?? '00'}}</h2>
+                                    <h2 class="mb-0">34</h2>
                                 </div>
                                 <div class="float-right icon-circle-medium icon-box-lg bg-info-light mt-1">
                                     <i class="fa fa-user fa-fw fa-sm text-primary"></i>
@@ -57,7 +57,7 @@
                             <div class="card-body">
                                 <div class="d-inline-block">
                                     <h5 class="text-muted">Chiffre d'affaires</h5>
-                                    <h2 class="mb-0">€ {{ number_format((float) $chiffreAffairesTotal, 2, '.', ' ') ?? '00' }}</h2>
+                                    <h2 class="mb-0">€ 00</h2>
                                 </div>
                                 <div class="float-right icon-circle-medium icon-box-lg bg-secondary-light mt-1">
                                     <i class="fa fa-money-bill-alt fa-fw fa-sm text-brand"></i>
@@ -77,7 +77,7 @@
                             <div class="card-body">
                                 <div class="d-inline-block">
                                     <h5 class="text-muted">Commandes non traitées</h5>
-                                    <h2 class="mb-0">{{ $nbcommandes_non_traite ?? '00' }}</h2>
+                                    <h2 class="mb-0">00</h2>
                                 </div>
                                 <div class="float-right icon-circle-medium icon-box-lg bg-brand-light mt-1">
                                     <i class="fa fa-exclamation-circle fa-fw fa-sm text-danger"></i>

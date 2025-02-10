@@ -68,24 +68,22 @@
                             </p>
                         </div>
                         <div id="form-messages"></div>
-                        <form id="contact-form" method="post" action="">
+                        <form id="contact-form" method="post" action="{{ route('contact.store') }}">
+                            @csrf
                             <fieldset>
                                 <div class="row">
                                     <div class="col-lg-6 mb-35 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="name" name="name"
-                                            placeholder="Nome" required="" />
+                                        <input class="from-control" type="text" id="name" name="name" placeholder="Nome" required="" />
                                     </div>
                                     <div class="col-lg-6 mb-35 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="email" name="email"
-                                            placeholder="E-mail" required="" />
+                                        <input class="from-control" type="text" id="email" name="email" placeholder="E-mail" required="" />
                                     </div>
                                     <div class="col-lg-12 mb-35 col-md-6 col-sm-6">
-                                        <input class="from-control" type="text" id="phone" name="phone"
-                                            placeholder="Telefono" required="" />
+                                        <input class="from-control" type="text" id="phone" name="phone" placeholder="Telefono" required="" />
                                     </div>
-
+                        
                                     <div class="col-lg-12 mb-50">
-                                        <textarea class="from-control" id="message" name="message" placeholder=" Messaggio" required=""></textarea>
+                                        <textarea class="from-control" id="message" name="message" placeholder="Messaggio" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mb-0">
@@ -93,6 +91,7 @@
                                 </div>
                             </fieldset>
                         </form>
+                        
                     </div>
                 </div>
             </div>

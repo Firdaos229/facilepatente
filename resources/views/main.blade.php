@@ -102,7 +102,7 @@
                                 <!-- Bouton d'inscription -->
                                 <div class="banner-btn wow fadeInUp" data-wow-delay="1500ms"
                                     data-wow-duration="2000ms">
-                                    <a class="readon green-banner" href="{{ route('course') }}">Verifica</a>
+                                    <a class="readon green-banner" href="{{ route('check_serial') }}">Verifica</a>
                                 </div>
                             </div>
                         </div>

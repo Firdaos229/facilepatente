@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\TemoignageController;
 use App\Models\User;
+use App\Http\Controllers\SerialNumberController;
+
 
 
 
@@ -77,38 +78,21 @@ Route::post('/envoyer-message', [ContactController::class, 'envoyermessage'])->n
 
 // ----------------------------------------------------------------------------------------
 
-        //Route réservé à l'admnistrateur protéger par middlewear
-        Route::middleware('auth','is_admin')->group(function () { 
+//Route réservé à l'admnistrateur protéger par middlewear
+Route::middleware('auth', 'is_admin')->group(function () {
 
-            Route::get('facilepatente/dashboard/', function () {
-                return view('dashboard.admin.dash');
-            })->name('dashboard');
+    Route::get('/facilepatente/dashboard', function () {
+        return view('dashboard.admin.dash');
+    })->name('dashboard');
 
-
-Route::get('/edit/image/produit/{produit}', [ProduitsController::class, 'editimage'])->name('produit.edit.image');
-
-Route::PUT('/update/image/{image}', [ProduitsController::class, 'updateimage'])->name('image.update');
-
-
-
-Route::get('/dashboard/user/all',  [AdminController::class, 'all'])->name('all');
+    Route::get('/dashboard/user/all',  [AdminController::class, 'all'])->name('all');
 
     //Suppresion de compte par admin
-Route::delete('/users/{id}', [AdminController::class,'destroy'])->name('user.destroy');
+    Route::delete('/users/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
 
-Route::resource('temoignages', TemoignageController::class);
+    Route::resource('temoignages', TemoignageController::class);
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/check-serial', [SerialNumberController::class, 'showForm'])->name('check_serial');
+Route::post('/check-serial', [SerialNumberController::class, 'checkSerial']);
