@@ -42,9 +42,9 @@
 <body>
     <div class="error-container">
         <h1>419</h1>
-        <p>Oups ! La page a expiré. Veuillez actualiser la page ou vous reconnecter.</p>
-        <a href="{{ url()->previous() }}">Retour</a>
-        <a href="{{ url('/') }}" style="margin-left: 10px;">Accueil</a>
+        <p>Ops! La pagina è scaduta. Aggiorna la pagina o accedi nuovamente.</p>
+        <a href="{{ url()->previous() }}">Ritorno</a>
+        <a href="{{ url('/') }}" style="margin-left: 10px;">Casa</a>
     </div>
 </body>
 </html>

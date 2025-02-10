@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-6 pl-60 order-last">
                     <div class="img-part">
-                        <img src="{{ asset('assets/images/banner/home12/Home_4-removebg-preview.png') }}" alt="" />
+                        <img src="{{ asset('assets/images/banner/home12/Home solo.png') }}" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 pr-0">
@@ -24,7 +24,7 @@
                             Ottenere la licenza express
                         </h1>
                         <div class="banner-btn wow fadeInUp" data-wow-delay="1500ms" data-wow-duration="2000ms">
-                            <a class="readon green-banner" href="{{route('tarif')}}">Scoprite le nostre offerte !</a>
+                            <a class="readon green-banner" href="{{ route('tarif') }}">Scoprite le nostre offerte !</a>
                         </div>
                     </div>
                 </div>
@@ -128,6 +128,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-lg-12 text-center pt-45">
+                    <a class="readon green-btn" href="{{ route('course-detail') }}">Iscrizione... </a>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur 403 - Accès interdit</title>
+    <title>Errore 403 - Accesso vietato</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,8 +42,8 @@
 <body>
     <div class="error-container">
         <h1>403</h1>
-        <p>Vous n'avez pas les autorisations nécessaires pour accéder à cette ressource.</p>
-        <a href="{{ url('/') }}">Retour à l'accueil</a>
+        <p>Non disponi delle autorizzazioni necessarie per accedere a questa risorsa.</p>
+        <a href="{{ url('/') }}">Ritorno a casa</a>
     </div>
 </body>
 </html>

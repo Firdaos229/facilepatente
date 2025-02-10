@@ -6,7 +6,7 @@
 
 <section class="mx-auto max-w-[600px] px-4 py-10 sm:px-8 xl:px-4">
   <div class="mb-6 flex items-center justify-center gap-2">
-    <img class="h-20 w-auto" src="{{ asset('assets/img/logo.png') }}" alt="logo" />
+    <img class="h-20 w-auto" src="{{ asset('assets/images/logo 1.png') }}" alt="logo" />
   </div>
   <h2 class="mb-8 text-center text-2xl font-semibold text-default-600">
     Connectez-vous !

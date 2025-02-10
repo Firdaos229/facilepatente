@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur 404 - Page non trouvée</title>
+    <title>Errore 404 - Pagina non trovata</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,9 +41,9 @@
 <body>
     <div class="error-container">
         <h1>404</h1>
-        <p>Oups ! La page que vous recherchez est introuvable.</p>
-        <p>Veuillez vérifier l'URL ou retourner à l'accueil.</p>
-        <a href="{{ url('/') }}">Retour à l'accueil</a>
+        <p>Ops! La pagina che stai cercando non può essere trovata.</p>
+        <p>Controlla l'URL o torna a casa.</p>
+        <a href="{{ url('/') }}">Ritorno a casa</a>
     </div>
 </body>
 </html>

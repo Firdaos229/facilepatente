@@ -14,7 +14,8 @@ class Images extends Model
         'filename',
     ];
 
-  public function produit(){
-    return $this->belongsTo(Produits::class,'idPro');
-  }
+    public function cours()
+    {
+        return $this->belongsTo(Cours::class, 'cours_id');
+    }
 }

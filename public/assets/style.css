@@ -2357,7 +2357,7 @@ body .modal-backdrop {
 }
 
 .rs-banner.style10 .banner-content {
-  padding: 120px 10px 100px; /* Ajuster les marges internes */
+  padding: 10px 10px 100px; /* Ajuster les marges internes */
   color: #fff; /* Contraste pour le texte */
 }
 
@@ -2386,9 +2386,10 @@ body .modal-backdrop {
   padding-bottom: 10px;
 }
 .rs-banner.style10 .img-part {
-  width: 550px;
+  width: 650px;
+  height: 100%;
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 17%;
   z-index: 111;
 }
