@@ -96,3 +96,7 @@ Route::middleware('auth', 'is_admin')->group(function () {
 
 Route::get('/check-serial', [SerialNumberController::class, 'showForm'])->name('check_serial');
 Route::post('/check-serial', [SerialNumberController::class, 'checkSerial']);
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/admin/messages', [ContactController::class, 'index'])->name('dashboard.admin.messages');

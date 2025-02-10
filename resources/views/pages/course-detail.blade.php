@@ -62,7 +62,7 @@
                             <p>Semplificare il processo di conseguimento della patente di guida in Italia. Soluzioni su
                                 misura, veloci e affidabili per tutti, anche per gli stranieri.</p>
                         </div>
-                        <form id="contact-form" method="post" action="">
+                        <form id="contact-form" method="post" action="" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-12 mb-30 col-md-12">
                                     <input class="from-control" type="text" id="name" name="name"

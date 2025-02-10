@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{{ asset('asset/vendor/charts/c3charts/c3.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
 
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('asset/vendor/datatables/css/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('asset/vendor/datatables/css/dataTables.bootstrap4.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/vendor/datatables/css/buttons.bootstrap4.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/vendor/datatables/css/select.bootstrap4.css') }}">
     <link rel="stylesheet" type="text/css"
@@ -106,8 +105,7 @@
                                                     class="fas fa-plus-circle"></i>Ajouter une catégorie</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i
-                                                    class="fas fa-list"></i>Liste des
+                                            <a class="nav-link" href="#"><i class="fas fa-list"></i>Liste des
                                                 catégories</a>
                                         </li>
                                     </ul>
@@ -125,8 +123,7 @@
                                                     class="fas fa-plus-circle"></i>Ajouter un produit</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i
-                                                    class="fas fa-list"></i>Liste des
+                                            <a class="nav-link" href="#"><i class="fas fa-list"></i>Liste des
                                                 produits</a>
                                         </li>
                                         <li class="nav-item ">
@@ -136,7 +133,7 @@
                                     </ul>
                                 </div>
                             </li>
-{{-- 
+                            {{-- 
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-3" aria-controls="submenu-3"><i
@@ -215,6 +212,11 @@
                                         </li> --}}
                                     </ul>
                                 </div>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
+                                        class="fas fa-arrow-left"></i></i>Liste des Messages</a>
                             </li>
 
                             <li class="nav-item ">

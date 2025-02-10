@@ -11,7 +11,7 @@
                     <p>Verifica il tuo numero di serie per garantire l'autenticità della tua patente di guida e accedi alle
                         tue informazioni personali in modo sicuro.</p>
                 </div>
-                <form id="contact-form" action="/check-serial" method="POST" class="form-check">
+                <form id="contact-form" action="/check-serial" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-lg-12 mb-30 col-md-12">
@@ -31,9 +31,15 @@
 
 
         @if (session('success'))
-            <div class="alert success bg-green-200 text-green-700 p-4 rounded-md mt-4">{{ session('success') }}</div>
-        @elseif (session('error'))
-            <div class="alert error bg-red-200 text-red-700 p-4 rounded-md mt-4">{{ session('error') }}</div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
         @endif
     </div>
 @endsection
