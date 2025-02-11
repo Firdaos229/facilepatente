@@ -10,7 +10,7 @@ class Images extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idPro',
+        'cours_id',
         'filename',
     ];
 
