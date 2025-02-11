@@ -51,12 +51,12 @@
                                 <!-- Action buttons to manage the message -->
                                 <form action="{{ route('messages.markAsRead', $message->id) }}" method="POST" style="display:inline;">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm">Mark as Read</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Segna come Letto</button>
                                 </form>
                                 <form action="{{ route('messages.delete', $message->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminare</button>
                                 </form>
                             </td>
                         </tr>
