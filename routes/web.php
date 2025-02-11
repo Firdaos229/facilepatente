@@ -7,7 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TemoignageController;
 use App\Models\User;
 use App\Http\Controllers\SerialNumberController;
-
+use App\Http\Controllers\CoursController;
 
 
 
@@ -102,3 +102,6 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/admin/messages', [ContactController::class, 'index'])->name('dashboard.admin.messages');
 Route::post('/messages/{id}/mark-as-read', [ContactController::class, 'markAsRead'])->name('messages.markAsRead');
 Route::delete('/messages/{id}', [ContactController::class, 'delete'])->name('messages.delete');
+
+// Routes pour les cours
+Route::resource('courses', CoursController::class);

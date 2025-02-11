@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Cours extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['nom', 'nombre_cours'];
 
-    public function image()
+    protected $fillable = [
+        'title',
+        'total_courses',
+        'slug'
+    ];
+
+    public function images()
     {
-        return $this->hasOne(Images::class, 'cours_id');
+        return $this->hasMany(Images::class, 'cours_id');
     }
 }
