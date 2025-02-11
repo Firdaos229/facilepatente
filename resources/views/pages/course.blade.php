@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row grid">
-                @foreach ($courses as $course)
+                @foreach ($cours as $course)
                     <div class="col-lg-3 col-md-6 grid-item filter1">
                         <div class="courses-item mb-30">
                             <div class="img-part">

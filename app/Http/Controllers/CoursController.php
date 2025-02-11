@@ -50,14 +50,14 @@ class CoursController extends Controller
                 $ext = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $ext;
 
-                // Déplacement du fichier vers le dossier de destination
-                $file->move('storage/uploads/', $filename);
+                // Déplacement le fichier vers le dossier de destination
+                $file->storeAs('storage/uploads/', $filename);
 
-                // Enregistrer dans la base de données
+                // Enregistrement du chemin du fichier dans le tableau
                 $uploadedImages[] = $filename;
 
-                // Enregistrer l'image associée au cours
-                Images::create([
+                // stocker dans la base de données pour chaque image
+                images::create([
                     'cours_id' => $cours->id,
                     'filename' => 'uploads/' . $filename,
                 ]);
@@ -68,13 +68,14 @@ class CoursController extends Controller
     }
 
     // Affichage des informations d'un cours
-    // public function show($id)
-    // {
-    //     $cours = Cours::with('images')->findOrFail($id);
-    //     return view('dashboard.courses.show', compact('cours'));
-    // }
+    public function show($id)
+    {
+        $cours = Cours::with('images')->findOrFail($id);
+        return view('dashboard.courses.update', compact('cours'));
+    }
 
     // Modification d'un cours
+
     public function edit($id)
     {
         $cours = Cours::findOrFail($id);
@@ -137,6 +138,4 @@ class CoursController extends Controller
         return redirect()->route('displayCourses')
             ->with('success', 'Il corso è stato eliminato con successo.');
     }
-
-
 }

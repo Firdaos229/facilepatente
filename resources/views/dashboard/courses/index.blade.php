@@ -67,7 +67,7 @@
                                                         <i class="mdi mdi-dots-vertical"></i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="{{ route('cours.edit', $course->id) }}" class="ml-4 btn btn-info">Per modificare</a>
+                                                        <a href="{{ route('cours.update', $course->id) }}" class="ml-4 btn btn-info">Per modificare</a>
                                                         <form action="{{ route('cours.destroy', $course->id) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce cours ?')" method="POST" class="mt-2">
                                                             @csrf
                                                             @method('DELETE')

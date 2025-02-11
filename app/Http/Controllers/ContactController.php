@@ -33,6 +33,14 @@ class ContactController extends Controller
         // Si la validation passe, on enregistre le message
         Message::create($validated);
 
+        // Envoi de l'email
+        Mail::send([], [], function ($message) use ($request) {
+            $message->from('contact@gmail.com', 'Facile Patente')
+                ->replyTo($request->email_id)
+                ->to('contact@gmail.com')
+                ->html($request->message);
+        });
+
         // Retourne vers la page de contact avec un message de succès
         return redirect()->route('contact')->with('success', 'Il tuo messaggio è stato inviato con successo!');
     }
@@ -40,7 +48,7 @@ class ContactController extends Controller
     public function markAsRead($id)
     {
         $message = Message::find($id);
-        $message->status = 'read'; // or any status flag
+        $message->status = 'read'; 
         $message->save();
 
         return redirect()->back()->with('success', 'Messaggio contrassegnato come letto');

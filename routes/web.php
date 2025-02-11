@@ -107,3 +107,13 @@ Route::get('/cours', [CoursController::class, 'index'])->name('displayCourses');
 Route::get('/cours/create', [CoursController::class, 'create'])->name('createCours');
 Route::post('/cours/store', [CoursController::class, 'store'])->name('storeCours');
 
+
+
+Route::get('/edit/cours/{cours}', [CoursController::class, 'edit'])->name('cours.update');
+
+Route::delete('/delete/{cours}', [CoursController::class, 'destroy'])->name('cours.destroy');
+
+
+
+Route::PUT('/update/image/{image}', [CoursController::class, 'updateimage'])->name('image.update');
+Route::get('/edit/image/cours/{cours}', [CoursController::class, 'editimage'])->name('cours.edit.image');

@@ -33,7 +33,8 @@ class AppServiceProvider extends ServiceProvider
                 $temoignages = temoignages::orderBy('created_at', 'desc')->get();
     
             // Passer les données à toutes les vues
-            $view->with('temoignages', $temoignages);
+            $view->with('temoignages', $temoignages)
+            ->with('cours', $cours);
         });
 
         
