@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\temoignages;
+use App\Models\Cours;
 use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+    
 
     /**
      * Bootstrap any application services.
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
     {
         // Composer pour partager des données avec toutes les vues
         view()->composer('*', function ($view) {
+            $cours = Cours::with('images')
+                ->Orderby('id', 'desc')
+                ->inRandomOrder()
+                ->paginate(12);
 
                 $temoignages = temoignages::orderBy('created_at', 'desc')->get();
     

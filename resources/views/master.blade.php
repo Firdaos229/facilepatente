@@ -115,20 +115,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-2" aria-controls="submenu-2"><i
-                                        class="fas fa-tasks"></i>Gestion des Produits</a>
+                                        class="fas fa-tasks"></i>Gestione del Corso</a>
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i
-                                                    class="fas fa-plus-circle"></i>Ajouter un produit</a>
+                                            <a class="nav-link" href="{{ route('createCours') }}"><i
+                                                    class="fas fa-plus-circle"></i>Aggiungi un corso</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i class="fas fa-list"></i>Liste des
-                                                produits</a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i
-                                                    class="fas fa-plus-circle"></i>Gestion des réductions</a>
+                                            <a class="nav-link" href="{{ route('displayCourses') }}"><i class="fas fa-list"></i>Elenco di
+                                                corso</a>
                                         </li>
                                     </ul>
                                 </div>

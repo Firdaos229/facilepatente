@@ -1,21 +1,21 @@
 @extends('master')
 
-@section('title', 'GadgetHaven - Ajout Produits')
+@section('title', 'Facile Patente | Aggiungi un corso')
 
 @section('content')
-    <div class="container-fluid  dashboard-content">
+    <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">AJOUTEZ UNE NOUVEAU PRODUIT</h2>
+                    <h2 class="pageheader-title">Aggiungi un corso</h2>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"
-                                        class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Gestion des
-                                        Produits</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Ajouter un produit</li>
+                                        class="breadcrumb-link">Pannello di controllo</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Gestione del corso</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Aggiungi un corso</li>
                             </ol>
                         </nav>
                     </div>
@@ -26,80 +26,52 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
-@endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+
                     <div class="card-body">
-                        <form action="{{ route('pastePro') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('storeCours') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+
                             <div class="form-group row">
-                                <label for="idCat" class="col-12 col-sm-3 col-form-label text-sm-right">Catégorie</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Titolo del corso</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <select name="idCat" id="idCat" class="form-control input-md inputNew" required>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->nom }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" name="title" class="form-control"
+                                        placeholder="Inserisci il titolo del corso" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Nom</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Numero totale di corsi</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="text" name="nom" class="form-control input-md inputNew"
-                                        placeholder="Entrez le nom du produit" required>
+                                    <input type="number" name="total_courses" class="form-control" placeholder="Ex: 10"
+                                        required min="1">
                                 </div>
                             </div>
+
                             <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Description</label>
+                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Immagini del corso</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <textarea name="description" class="form-control input-md inputNew" placeholder="Entrez la description sur le produit"
-                                        required></textarea>
+                                    <input type="file" name="image[]" class="form-control" multiple>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Détails</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <textarea name="details" class="form-control input-md inputNew" placeholder="Entrez les détails sur le produit"
-                                        required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Prix</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="number" name="prix" class="form-control input-md inputNew"
-                                        placeholder="Entrez le prix du produit" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Quantité</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="number" name="quantite" class="form-control input-md inputNew"
-                                        placeholder="Entrez la quantité en stock" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-12 col-sm-3 col-form-label text-sm-right">Images</label>
-                                <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="file" name="image[]" class="form-control input-md inputNew"
-                                        size="18" multiple required>
-                                </div>
-                            </div>
+
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                    <button type="submit" class="btn btn-space btn-primary">Nouveau Produit</button>
-                                    <button class="btn btn-space btn-secondary"><a href="{{ route('displayProducts') }}"
-                                            class="text-white">Voir tous les produits</a></button>
+                                    <button type="submit" class="btn btn-space btn-primary">Crea il corso</button>
+                                    <a href="{{ route('displayCourses') }}"
+                                        class="btn btn-space btn-secondary text-white">Vedi tutti i corsi</a>
                                 </div>
                             </div>
                         </form>
@@ -107,8 +79,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
 @endsection

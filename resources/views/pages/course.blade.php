@@ -30,6 +30,40 @@
                 </div>
             </div>
             <div class="row grid">
+                @foreach ($courses as $course)
+                    <div class="col-lg-3 col-md-6 grid-item filter1">
+                        <div class="courses-item mb-30">
+                            <div class="img-part">
+                                @if ($course->images->isNotEmpty())
+                                    <img src="{{ asset('storage/' . $course->images->first()->filename) }}" alt="{{ $course->title }}" />
+                                @else
+                                    <img src="{{ asset('assets/images/default-course.jpg') }}" alt="Image par défaut" />
+                                @endif
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title">
+                                    <a href="{{ route('course-detail', ['id' => $course->id]) }}">{{ $course->title }}</a>
+                                </h3>
+                                <div class="bottom-part">
+                                    <div class="info-meta">
+                                        <ul>
+                                            <li class="user">{{ $course->total_courses ?? '0' }} corsi</li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="{{ route('course-detail', ['id' => $course->id]) }}">
+                                            <i class="flaticon-right-arrow"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            
+
+            <div class="row grid">
                 <div class="col-lg-3 col-md-6 grid-item filter1">
                     <div class="courses-item mb-30">
                         <div class="img-part">

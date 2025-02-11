@@ -46,9 +46,6 @@ Route::get('/', function () {
 
 
 Route::get('/about', function () {
-
-    // $about = About::first();  
-
     return view('pages.about');
 })->name('about');
 
@@ -105,3 +102,8 @@ Route::delete('/messages/{id}', [ContactController::class, 'delete'])->name('mes
 
 // Routes pour les cours
 Route::resource('courses', CoursController::class);
+
+Route::get('/cours', [CoursController::class, 'index'])->name('displayCourses');
+Route::get('/cours/create', [CoursController::class, 'create'])->name('createCours');
+Route::post('/cours/store', [CoursController::class, 'store'])->name('storeCours');
+
