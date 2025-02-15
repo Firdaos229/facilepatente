@@ -176,9 +176,8 @@
                                                 contatto</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
-                                                    class="fas fa-arrow-left"></i></i>Elenco delle richieste di
-                                                contatto</a>
+                                            <a class="nav-link" href="{{ route('dashboard.admin.driver-license') }}"><i
+                                                    class="fas fa-arrow-left"></i></i>Messaggi sulla patente di guida</a>
                                         </li>
                                         {{-- <li class="nav-item ">
                                             <a class="nav-link" href="{{ route('all') }}"><i><svg

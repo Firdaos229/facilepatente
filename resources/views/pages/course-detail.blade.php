@@ -48,6 +48,13 @@
 
     <!-- Faq Section Start -->
     <div class="rs-faq-part style1 pt-100 pb-100 md-pt-70 md-pb-70">
+        <div id="form-messages">
+            @if (session('success'))
+                <p class="success-message">{{ session('success') }}</p>
+            @elseif(session('error'))
+                <p class="error-message">{{ session('error') }}</p>
+            @endif
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
@@ -55,6 +62,7 @@
                         <img class="" src="{{ asset('assets/images/about/View 1.jpg') }}" alt="About Image" />
                     </div>
                 </div>
+
                 <div class="col-lg-6 padding-0 col-md-12">
                     <div class="rs-free-contact">
                         <div class="sec-title3">
@@ -62,7 +70,9 @@
                             <p>Semplificare il processo di conseguimento della patente di guida in Italia. Soluzioni su
                                 misura, veloci e affidabili per tutti, anche per gli stranieri.</p>
                         </div>
+
                         <form method="post" action="{{ route('driver-licenses.store') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12 mb-30 col-md-12">
                                     <input class="from-control" type="text" id="name" name="name"
@@ -82,17 +92,17 @@
                                     <p>Classe della patente di guida</p>
                                     <select class="form-control" id="license_class" name="license_class" required>
                                         <option value="" disabled selected>Seleziona una licenza</option>
-                                        <option value="AM">Licenza AM</option>
-                                        <option value="A1">Licenza A1</option>
-                                        <option value="A2">Licenza A2</option>
-                                        <option value="A">Licenza A</option>
-                                        <option value="B1">Licenza B1</option>
-                                        <option value="B">Patente B</option>
-                                        <option value="BE">Patente BE</option>
-                                        <option value="C1E">Patente C1E</option>
-                                        <option value="CE">Patente CE</option>
-                                        <option value="D1E">Patente D1E</option>
-                                        <option value="DE">Licenza DE</option>
+                                        <option value="Licenza AM">Licenza AM</option>
+                                        <option value="Licenza A1">Licenza A1</option>
+                                        <option value="Licenza A2">Licenza A2</option>
+                                        <option value="Licenza A">Licenza A</option>
+                                        <option value="Licenza B1">Licenza B1</option>
+                                        <option value="Patente B">Patente B</option>
+                                        <option value="Patente BE">Patente BE</option>
+                                        <option value="Patente C1E">Patente C1E</option>
+                                        <option value="Patente CE">Patente CE</option>
+                                        <option value="Patente D1E">Patente D1E</option>
+                                        <option value="Licenza DE">Licenza DE</option>
                                     </select>
                                 </div>
 
@@ -109,27 +119,31 @@
                                 <div class="col-lg-12 mb-30 col-md-12">
                                     <p>Come desidera pagare la sua patente di guida ?</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="pagamento-unica-soluzione"
-                                            name="payment_options[]" value="unica-soluzione" />
+                                        <input class="form-check-input" type="radio" id="pagamento-unica-soluzione"
+                                            name="payment_option" value="unica-soluzione"
+                                            {{ old('payment_option') == 'unica-soluzione' ? 'checked' : '' }} />
                                         <label class="form-check-label" for="pagamento-unica-soluzione">
                                             In un'unica soluzione
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="pagamento-due-rate"
-                                            name="payment_options[]" value="due-rate" />
+                                        <input class="form-check-input" type="radio" id="pagamento-due-rate"
+                                            name="payment_option" value="due-rate"
+                                            {{ old('payment_option') == 'due-rate' ? 'checked' : '' }} />
                                         <label class="form-check-label" for="pagamento-due-rate">
                                             In due rate
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="pagamento-tre-rate"
-                                            name="payment_options[]" value="tre-rate" />
+                                        <input class="form-check-input" type="radio" id="pagamento-tre-rate"
+                                            name="payment_option" value="tre-rate"
+                                            {{ old('payment_option') == 'tre-rate' ? 'checked' : '' }} />
                                         <label class="form-check-label" for="pagamento-tre-rate">
                                             Fino a tre rate
                                         </label>
                                     </div>
                                 </div>
+
 
 
                                 <div class="col-lg-12 mb-30 col-md-12">

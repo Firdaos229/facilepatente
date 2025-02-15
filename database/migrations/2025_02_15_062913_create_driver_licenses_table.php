@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('license_class');
             $table->string('phone');
             $table->string('village');
-            $table->json('payment_options'); // Utilise json pour les options de paiement
+            $table->string('payment_option')->change();
             $table->string('email');
             $table->text('message');
             $table->timestamps();

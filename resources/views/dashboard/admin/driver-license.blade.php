@@ -1,13 +1,13 @@
 @extends('master')
 
-@section('title', 'Facile Patente - Messaggi')
+@section('title', 'Facile Patente - Messaggi sulla patente di guida')
 
 @section('content')
     <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">Messaggi degli Utenti per la Patente di Guida</h2>
+                    <h2 class="pageheader-title">Messaggi degli utenti - Patente di guida</h2>
                     <div class="page-breadcrumb">
                     </div>
                 </div>
@@ -33,30 +33,40 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
+                        <th>Nome della famiglia</th>
                         <th>E-mail</th>
                         <th>Telefono</th>
+                        <th>Indirizzo</th>
+                        <th>Categoria di licenza</th>
+                        <th>Villaggio</th>
+                        <th>Metodo di pagamento</th>
                         <th>Messaggio</th>
                         <th>Data</th>
-                        <th>Azione</th> <!-- Colonna per le azioni -->
+                        <th>Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($messages as $message)
+                    @foreach ($driverLicense as $message)
                         <tr>
                             <td>{{ $message->name }}</td>
+                            <td>{{ $message->lastname }}</td>
                             <td>{{ $message->email }}</td>
                             <td>{{ $message->phone }}</td>
+                            <td>{{ $message->address }}</td>
+                            <td>{{ $message->license_class }}</td>
+                            <td>{{ $message->village }}</td>
+                            <td>{{ $message->payment_option ?? 'Aucune option sélectionnée' }}</td>
                             <td>{{ $message->message }}</td>
-                            <td>{{ $message->created_at }}</td>
+                            <td>{{ $message->created_at->format('d/m/Y H:i') }}</td>
                             <td>
-                                <!-- Form per segnare come letto -->
+                                <!-- Marquer comme lu -->
                                 <form action="{{ route('driverLicenseMessages.markAsRead', $message->id) }}" method="POST"
                                     style="display:inline;">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm">Segna come Letto</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Segna come letto</button>
                                 </form>
 
-                                <!-- Form per eliminare il messaggio -->
+                                <!-- Supprimer -->
                                 <form action="{{ route('driverLicenseMessages.delete', $message->id) }}" method="POST"
                                     style="display:inline;">
                                     @csrf

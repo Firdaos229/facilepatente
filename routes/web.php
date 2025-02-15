@@ -142,3 +142,8 @@ Route::put('/courses/{course}', [CourseController::class, 'update'])->name('cour
 
 Route::get('/driver-license/create', [DriverLicenseController::class, 'create'])->name('driver-licenses.create');
 Route::post('/driver-license', [DriverLicenseController::class, 'store'])->name('driver-licenses.store');
+Route::post('/driverLicenseMessages/{id}/markAsRead', [DriverLicenseController::class, 'markAsRead'])->name('driverLicenseMessages.markAsRead');
+Route::delete('/driverLicenseMessages/{id}', [DriverLicenseController::class, 'delete'])->name('driverLicenseMessages.delete');
+
+
+Route::get('/admin/driver-license', [DriverLicenseController::class, 'index'])->name('dashboard.admin.driver-license');

@@ -19,8 +19,4 @@ class DriverLicense extends Model
         'email',
         'message',
     ];
-
-    protected $casts = [
-        'payment_options' => 'array',  // Pour convertir le champ JSON en tableau
-    ];
 }

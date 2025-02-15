@@ -7,9 +7,10 @@ use App\Models\DriverLicense;
 
 class DriverLicenseController extends Controller
 {
-    public function create()
+    public function index()
     {
-        return view('driver-licenses.create'); // Affiche le formulaire
+        $driverLicense = DriverLicense::all();
+        return view('dashboard.admin.driver-license', compact('driverLicense'));
     }
 
     public function store(Request $request)
@@ -21,7 +22,7 @@ class DriverLicenseController extends Controller
             'license_class' => 'required|string',
             'phone' => 'required|string|max:15',
             'village' => 'required|string',
-            'payment_options' => 'nullable|array',
+            'payment_option' => 'required|string', 
             'email' => 'required|email',
             'message' => 'required|string',
         ]);
@@ -34,12 +35,29 @@ class DriverLicenseController extends Controller
             'license_class' => $validated['license_class'],
             'phone' => $validated['phone'],
             'village' => $validated['village'],
-            'payment_options' => $validated['payment_options'] ?? [],
+            'payment_option' => $validated['payment_option'], 
             'email' => $validated['email'],
             'message' => $validated['message'],
         ]);
 
-        return redirect()->route('driver-licenses.create')->with('success', 'Formulaire soumis avec succès !');
+        return redirect()->route('course-detail')->with('success', 'Modulo inviato con successo!');
     }
 
+    public function markAsRead($id)
+    {
+        $message = DriverLicense::findOrFail($id);
+        $message->status = 'read';
+        $message->save();
+
+        return redirect()->back()->with('success', 'Messaggio contrassegnato come letto.');
+    }
+
+    public function delete($id)
+    {
+        $message = DriverLicense::findOrFail($id);
+        $message->delete();
+
+        return redirect()->back()->with('success', 'Messaggio eliminato.');
+    }
 }
+
