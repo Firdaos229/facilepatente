@@ -50,14 +50,14 @@
                             <td>{{ $message->created_at }}</td>
                             <td>
                                 <!-- Form per segnare come letto -->
-                                <form action="{{ route('driverLicenseMessages.markAsRead', $message->id) }}" method="POST"
+                                <form action="{{ route('messages.markAsRead', $message->id) }}" method="POST"
                                     style="display:inline;">
                                     @csrf
                                     <button type="submit" class="btn btn-primary btn-sm">Segna come Letto</button>
                                 </form>
 
                                 <!-- Form per eliminare il messaggio -->
-                                <form action="{{ route('driverLicenseMessages.delete', $message->id) }}" method="POST"
+                                <form action="{{ route('messages.delete', $message->id) }}" method="POST"
                                     style="display:inline;">
                                     @csrf
                                     @method('DELETE')

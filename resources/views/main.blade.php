@@ -250,7 +250,7 @@
                 <div class="search-block clearfix">
                     <form>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Search Here..." type="text" />
+                            <input class="form-control" placeholder="Cerca qui..." type="text" />
                         </div>
                     </form>
                 </div>

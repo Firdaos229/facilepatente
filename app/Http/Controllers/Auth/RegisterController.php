@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/facilepatente/dashboard';
 
     /**
      * Create a new controller instance.
@@ -68,8 +68,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-          // Générer un slug unique en utilisant UUID
-    $slug = (string) Str::uuid();
+        // Générer un slug unique en utilisant UUID
+        $slug = (string) Str::uuid();
 
         return User::create([
             'name' => $data['name'],
@@ -79,7 +79,4 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-
-
-  
 }

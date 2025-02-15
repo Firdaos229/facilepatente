@@ -172,50 +172,19 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
                                             <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
-                                                    class="fas fa-arrow-left"></i></i>Elenco delle richieste di
+                                                    class="fas fa-comment"></i>Elenco delle richieste di
                                                 contatto</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('dashboard.admin.driver-license') }}"><i
-                                                    class="fas fa-arrow-left"></i></i>Messaggi sulla patente di guida</a>
+                                            <a class="nav-link"
+                                                href="{{ route('dashboard.admin.driver-license') }}"><i
+                                                    class="fas fa-comment"></i>Messaggi sulla patente di guida</a>
                                         </li>
-                                        {{-- <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('all') }}"><i><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-people"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
-                                                    </svg></i>Liste des utilisateurs</a>
-                                        </li> --}}
-                                        {{-- <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('createpub') }}"><i
-                                                class="fas fa-plus-circle"></i>Ajoutez une
-                                                publicité</a>
-                                        </li> --}}
-                                        <li class="nav-item">
+
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link" href="{{ route('temoignages.create') }}">
                                                 <i class="fas fa-comment"></i> Testimonianze
                                             </a>
-                                        </li>
-                                        {{-- <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('admin.about.create') }}"><i><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-file-earmark"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
-                                                    </svg></i>A propos </a>
-                                        </li> --}}
-
-                                        {{-- <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('admin.footer.index') }}"><i><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor"
-                                                        class="bi bi-info-circle-fill" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
-                                                    </svg></i>Infos du site </a>
                                         </li> --}}
                                     </ul>
                                 </div>

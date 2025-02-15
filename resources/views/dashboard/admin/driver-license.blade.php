@@ -55,7 +55,7 @@
                             <td>{{ $message->address }}</td>
                             <td>{{ $message->license_class }}</td>
                             <td>{{ $message->village }}</td>
-                            <td>{{ $message->payment_option ?? 'Aucune option sélectionnée' }}</td>
+                            <td>{{ $message->payment_option ?? 'Nessuna opzione selezionata' }}</td>
                             <td>{{ $message->message }}</td>
                             <td>{{ $message->created_at->format('d/m/Y H:i') }}</td>
                             <td>
