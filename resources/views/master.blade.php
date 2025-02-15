@@ -175,6 +175,11 @@
                                                     class="fas fa-arrow-left"></i></i>Elenco delle richieste di
                                                 contatto</a>
                                         </li>
+                                        <li class="nav-item ">
+                                            <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
+                                                    class="fas fa-arrow-left"></i></i>Elenco delle richieste di
+                                                contatto</a>
+                                        </li>
                                         {{-- <li class="nav-item ">
                                             <a class="nav-link" href="{{ route('all') }}"><i><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="16"

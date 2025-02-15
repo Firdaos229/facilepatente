@@ -31,14 +31,14 @@ class ContactController extends Controller
             $message->from('contact@gmail.com', 'Facile Patente')
                 ->replyTo($request->email) // Correction ici !
                 ->to('contact@gmail.com')
-                ->subject('Nouveau message de contact')
-                ->html('<p><strong>Nom :</strong> ' . $request->name . '</p>
-                        <p><strong>Email :</strong> ' . $request->email . '</p>
-                        <p><strong>Téléphone :</strong> ' . $request->phone . '</p>
-                        <p><strong>Message :</strong> ' . nl2br(e($request->message)) . '</p>');
+                ->subject('Nuovo messaggio di contatto')
+                ->html('<p><strong>Nome :</strong> ' . $request->name . '</p>
+                        <p><strong>E-mail :</strong> ' . $request->email . '</p>
+                        <p><strong>Telefono :</strong> ' . $request->phone . '</p>
+                        <p><strong>Messaggio :</strong> ' . nl2br(e($request->message)) . '</p>');
         });
 
-        return redirect()->route('contact')->with('success', 'Votre message a été envoyé avec succès !');
+        return redirect()->route('contact')->with('success', 'Il tuo messaggio è stato inviato con successo!');
     }
 
     public function markAsRead($id)
@@ -47,7 +47,7 @@ class ContactController extends Controller
         $message->status = 'read';
         $message->save();
 
-        return redirect()->back()->with('success', 'Message marqué comme lu.');
+        return redirect()->back()->with('success', 'Messaggio contrassegnato come letto.');
     }
 
     public function delete($id)
@@ -56,6 +56,6 @@ class ContactController extends Controller
         $message->delete();
 
 
-        return redirect()->back()->with('success', 'Message supprimé.');
+        return redirect()->back()->with('success', 'Messaggio eliminato.');
     }
 }

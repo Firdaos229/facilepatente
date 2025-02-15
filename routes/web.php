@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Http\Controllers\SerialNumberController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DriverLicenseController; 
 
 
 
@@ -101,20 +102,6 @@ Route::get('/admin/messages', [ContactController::class, 'index'])->name('dashbo
 Route::post('/messages/{id}/mark-as-read', [ContactController::class, 'markAsRead'])->name('messages.markAsRead');
 Route::delete('/messages/{id}', [ContactController::class, 'delete'])->name('messages.delete');
 
-// Routes pour les cours
-// Route::resource('courses', CoursController::class);
-
-// Route::get('/cours', [CoursController::class, 'index'])->name('displayCourses');
-// Route::get('/cours/create', [CoursController::class, 'create'])->name('createCours');
-// Route::post('/cours/store', [CoursController::class, 'store'])->name('storeCours');
-
-// Route::get('/edit/cours/{cours}', [CoursController::class, 'edit'])->name('cours.update');
-
-// Route::delete('/delete/{cours}', [CoursController::class, 'destroy'])->name('cours.destroy');
-
-// Route::PUT('/update/image/{image}', [CoursController::class, 'updateimage'])->name('image.update');
-// Route::get('/edit/image/cours/{cours}', [CoursController::class, 'editimage'])->name('cours.edit.image');
-
 
 //pour les tarifs
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -150,3 +137,8 @@ Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('c
 
 // Soumettre la mise à jour d'un cours
 Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+
+
+
+Route::get('/driver-license/create', [DriverLicenseController::class, 'create'])->name('driver-licenses.create');
+Route::post('/driver-license', [DriverLicenseController::class, 'store'])->name('driver-licenses.store');

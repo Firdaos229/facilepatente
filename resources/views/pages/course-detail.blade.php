@@ -62,7 +62,7 @@
                             <p>Semplificare il processo di conseguimento della patente di guida in Italia. Soluzioni su
                                 misura, veloci e affidabili per tutti, anche per gli stranieri.</p>
                         </div>
-                        <form id="contact-form" method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('driver-licenses.store') }}" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-12 mb-30 col-md-12">
                                     <input class="from-control" type="text" id="name" name="name"
@@ -80,7 +80,7 @@
 
                                 <div class="col-lg-12 mb-30 col-md-12">
                                     <p>Classe della patente di guida</p>
-                                    <select class="form-control" id="address" name="address" required>
+                                    <select class="form-control" id="license_class" name="license_class" required>
                                         <option value="" disabled selected>Seleziona una licenza</option>
                                         <option value="AM">Licenza AM</option>
                                         <option value="A1">Licenza A1</option>
@@ -110,21 +110,21 @@
                                     <p>Come desidera pagare la sua patente di guida ?</p>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="pagamento-unica-soluzione"
-                                            name="pagamento[]" value="unica-soluzione" />
+                                            name="payment_options[]" value="unica-soluzione" />
                                         <label class="form-check-label" for="pagamento-unica-soluzione">
                                             In un'unica soluzione
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="pagamento-due-rate"
-                                            name="pagamento[]" value="due-rate" />
+                                            name="payment_options[]" value="due-rate" />
                                         <label class="form-check-label" for="pagamento-due-rate">
                                             In due rate
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="pagamento-tre-rate"
-                                            name="pagamento[]" value="tre-rate" />
+                                            name="payment_options[]" value="tre-rate" />
                                         <label class="form-check-label" for="pagamento-tre-rate">
                                             Fino a tre rate
                                         </label>
