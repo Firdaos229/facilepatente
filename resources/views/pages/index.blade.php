@@ -149,68 +149,40 @@
                 </div>
             </div>
             <div class="pricing-container">
-                <div class="pricing-card">
-                    <div class="header">
-                        <h2 class="title">Licenza AM</h2>
-
-                        <p class="subtitle">Ottenere rapidamente la licenza AM</p>
+                @foreach ($pricings->take(4) as $pricing) <!-- Limite à 4 prix -->
+                    <div class="pricing-card">
+                        <div class="header">
+                            <h2 class="title">{{ $pricing->title }}</h2>
+                            <p class="subtitle">{{ $pricing->subtitle }}</p>
+                        </div>
+                        <div class="price"> €
+                            <span>
+                                {{ $pricing->price == floor($pricing->price) ? number_format($pricing->price, 0, ',', ' ') : number_format($pricing->price, 2, ',', ' ') }}
+                            </span>
+                        </div>
+                        <ul class="features">
+                            @php
+                                // Si 'features' est une chaîne de caractères séparée par des virgules, on la convertit en tableau
+                                $features = is_string($pricing->features)
+                                    ? explode(',', $pricing->features)
+                                    : $pricing->features;
+                            @endphp
+            
+                            @if (count($features) > 0)
+                                @foreach ($features as $feature)
+                                    <!-- Suppression uniquement des crochets et guillemets -->
+                                    <li>✔ {{ preg_replace('/[\'"\[\]]/', '', trim($feature)) }}</li>
+                                    <hr />
+                                @endforeach
+                            @else
+                                <li>Pas de caractéristiques disponibles.</li>
+                            @endif
+                        </ul>
+                        <button class="cta-button">Iniziate subito !</button>
                     </div>
-                    <div class="price">€ <span>499</span></div>
-                    <ul class="features">
-                        <li>✔ 5 lezioni pratiche</li>
-                        <hr />
-                        <li>✔ Accesso al codice di condotta</li>
-                        <hr />
-                        <li>✔ Assistenza prioritaria</li>
-                    </ul>
-                    <button class="cta-button">Iniziate subito !</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="header">
-                        <h2 class="title">Licenza A1</h2>
-                        <p class="subtitle">Ottenere rapidamente la licenza A1</p>
-                    </div>
-                    <div class="price">€ <span>499</span></div>
-                    <ul class="features">
-                        <li>✔ 5 lezioni pratiche</li>
-                        <hr />
-                        <li>✔ Accesso al codice di condotta</li>
-                        <hr />
-                        <li>✔ Assistenza prioritaria</li>
-                    </ul>
-                    <button class="cta-button">Iniziate subito !</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="header">
-                        <h2 class="title">Licenza A2</h2>
-                        <p class="subtitle">Ottenere rapidamente la licenza A2</p>
-                    </div>
-                    <div class="price">€ <span>499</span></div>
-                    <ul class="features">
-                        <li>✔ 5 lezioni pratiche</li>
-                        <hr />
-                        <li>✔ Accesso al codice di condotta</li>
-                        <hr />
-                        <li>✔ Assistenza prioritaria</li>
-                    </ul>
-                    <button class="cta-button">Iniziate subito !</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="header">
-                        <h2 class="title">Licenza A</h2>
-                        <p class="subtitle">Ottenere rapidamente la licenza A</p>
-                    </div>
-                    <div class="price">€ <span>499</span></div>
-                    <ul class="features">
-                        <li>✔ 5 lezioni pratiche</li>
-                        <hr />
-                        <li>✔ Accesso al codice di condotta</li>
-                        <hr />
-                        <li>✔ Assistenza prioritaria</li>
-                    </ul>
-                    <button class="cta-button">Iniziate subito !</button>
-                </div>
+                @endforeach
             </div>
+            
 
             <div class="col-lg-12 text-center pt-45">
                 <a class="readon green-btn" href="{{ route('tarif') }}">Vedi di più... </a>

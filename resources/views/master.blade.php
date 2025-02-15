@@ -101,11 +101,12 @@
                                 <div id="submenu-5" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('pricings.create')}}"><i
+                                            <a class="nav-link" href="{{ route('pricings.create') }}"><i
                                                     class="fas fa-plus-circle"></i>Aggiungi una tariffa</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('pricings.index')}}"><i class="fas fa-list"></i>Elenco di
+                                            <a class="nav-link" href="{{ route('pricings.index') }}"><i
+                                                    class="fas fa-list"></i>Elenco di
                                                 prezzi</a>
                                         </li>
                                     </ul>
@@ -123,7 +124,8 @@
                                                     class="fas fa-plus-circle"></i>Aggiungi un corso</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('displayCourses') }}"><i class="fas fa-list"></i>Elenco di
+                                            <a class="nav-link" href="{{ route('displayCourses') }}"><i
+                                                    class="fas fa-list"></i>Elenco di
                                                 corso</a>
                                         </li>
                                     </ul>
@@ -165,10 +167,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-4" aria-controls="submenu-4"><i
-                                        class="fas fa-cog mr-2"></i>Paramètres</a>
+                                        class="fas fa-cog mr-2"></i>Impostazioni</a>
                                 <div id="submenu-4" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
+                                            <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
+                                                    class="fas fa-arrow-left"></i></i>Elenco delle richieste di
+                                                contatto</a>
+                                        </li>
+                                        {{-- <li class="nav-item ">
                                             <a class="nav-link" href="{{ route('all') }}"><i><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="16"
                                                         height="16" fill="currentColor" class="bi bi-people"
@@ -176,7 +183,7 @@
                                                         <path
                                                             d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
                                                     </svg></i>Liste des utilisateurs</a>
-                                        </li>
+                                        </li> --}}
                                         {{-- <li class="nav-item ">
                                             <a class="nav-link" href="{{ route('createpub') }}"><i
                                                 class="fas fa-plus-circle"></i>Ajoutez une
@@ -184,7 +191,7 @@
                                         </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('temoignages.create') }}">
-                                                <i class="fas fa-comment"></i> Témoignages
+                                                <i class="fas fa-comment"></i> Testimonianze
                                             </a>
                                         </li>
                                         {{-- <li class="nav-item ">
@@ -210,14 +217,11 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard.admin.messages') }}"><i
-                                        class="fas fa-arrow-left"></i></i>Liste des Messages</a>
-                            </li>
+
 
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('index') }}"><i
-                                        class="fas fa-arrow-left"></i></i>Retourner au site public</a>
+                                        class="fas fa-arrow-left"></i></i>Ritorno al sito pubblico</a>
                             </li>
                             <li
                                 class="relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
@@ -227,7 +231,7 @@
                                         onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();"><i
                                             class="fas fa-power-off mr-2"></i>
-                                        {{ __('Déconnexion') }}
+                                        {{ __('Disconnetti') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -257,12 +261,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                            Copyright © 2024 GadgetHaven. Tous Droits Réserves.
+                            Copyright © 2024 GadgetHaven. Tutti i diritti riservati.
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="{{ route('about') }}">A propos</a>
-                                <a href="{{ route('contact') }}">Contactez-Nous</a>
+                                <a href="{{ route('about') }}">Di</a>
+                                <a href="{{ route('contact') }}">Contattaci</a>
                             </div>
                         </div>
                     </div>
