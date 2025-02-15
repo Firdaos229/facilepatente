@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\temoignages;
+use App\Models\Pricing;
 use App\Models\Cours;
 use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-    
+
 
     /**
      * Bootstrap any application services.
@@ -30,15 +31,14 @@ class AppServiceProvider extends ServiceProvider
                 ->inRandomOrder()
                 ->paginate(12);
 
-                $temoignages = temoignages::orderBy('created_at', 'desc')->get();
-    
+            $pricings = Pricing::all();
+
+            $temoignages = temoignages::orderBy('created_at', 'desc')->get();
+
             // Passer les données à toutes les vues
             $view->with('temoignages', $temoignages)
-            ->with('cours', $cours);
+                ->with('cours', $cours)
+                ->with('pricings', $pricings);
         });
-
-        
     }
-
-
 }

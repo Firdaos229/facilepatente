@@ -97,16 +97,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-5" aria-controls="submenu-5"><i
-                                        class="fas fa-fw fa-table"></i>Gestion des Catégories</a>
+                                        class="fas fa-fw fa-table"></i>Gestione dei prezzi</a>
                                 <div id="submenu-5" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i
-                                                    class="fas fa-plus-circle"></i>Ajouter une catégorie</a>
+                                            <a class="nav-link" href="{{route('pricings.create')}}"><i
+                                                    class="fas fa-plus-circle"></i>Aggiungi una tariffa</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="#"><i class="fas fa-list"></i>Liste des
-                                                catégories</a>
+                                            <a class="nav-link" href="{{route('pricings.index')}}"><i class="fas fa-list"></i>Elenco di
+                                                prezzi</a>
                                         </li>
                                     </ul>
                                 </div>

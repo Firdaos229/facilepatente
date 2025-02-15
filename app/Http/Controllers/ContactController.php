@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
 use App\Models\Message;
 
 class ContactController extends Controller
@@ -18,9 +14,6 @@ class ContactController extends Controller
         return view('dashboard.admin.messages', compact('messages'));
     }
 
-
-
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -30,35 +23,38 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        // Si la validation passe, on enregistre le message
+        // Enregistrer le message en base de données
         Message::create($validated);
 
         // Envoi de l'email
         Mail::send([], [], function ($message) use ($request) {
             $message->from('contact@gmail.com', 'Facile Patente')
-                ->replyTo($request->email_id)
+                ->replyTo($request->email) // Correction ici !
                 ->to('contact@gmail.com')
-                ->html($request->message);
+                ->subject('Nouveau message de contact')
+                ->html('<p><strong>Nom :</strong> ' . $request->name . '</p>
+                        <p><strong>Email :</strong> ' . $request->email . '</p>
+                        <p><strong>Téléphone :</strong> ' . $request->phone . '</p>
+                        <p><strong>Message :</strong> ' . nl2br(e($request->message)) . '</p>');
         });
 
-        // Retourne vers la page de contact avec un message de succès
-        return redirect()->route('contact')->with('success', 'Il tuo messaggio è stato inviato con successo!');
+        return redirect()->route('contact')->with('success', 'Votre message a été envoyé avec succès !');
     }
 
     public function markAsRead($id)
     {
-        $message = Message::find($id);
+        $message = Message::findOrFail($id);
         $message->status = 'read'; 
         $message->save();
 
-        return redirect()->back()->with('success', 'Messaggio contrassegnato come letto');
+        return redirect()->back()->with('success', 'Message marqué comme lu.');
     }
 
     public function delete($id)
     {
-        $message = Message::find($id);
+        $message = Message::findOrFail($id);
         $message->delete();
 
-        return redirect()->back()->with('success', 'Messaggio eliminato');
+        return redirect()->back()->with('success', 'Message supprimé.');
     }
 }

@@ -229,6 +229,40 @@
                     <button class="cta-button">Iniziate subito !</button>
                 </div>
             </div>
+
+
+            <div class="pricing-container">
+                @foreach ($pricings as $pricing)
+                    <div class="pricing-card">
+                        <div class="header">
+                            <h2 class="title">{{ $pricing->title }}</h2>
+                            <p class="subtitle">{{ $pricing->subtitle }}</p>
+                        </div>
+                        <div class="price">€ <span>{{ number_format($pricing->price, 2, ',', ' ') }}</span></div>
+                        <ul class="features">
+                            @php
+                                // Si 'features' est une chaîne de caractères séparée par des virgules, on la convertit en tableau
+                                $features = is_string($pricing->features)
+                                    ? explode(',', $pricing->features)
+                                    : $pricing->features;
+                            @endphp
+
+                            @if (count($features) > 0)
+                                @foreach ($features as $feature)
+                                    <!-- Suppression uniquement des crochets et guillemets -->
+                                    <li>✔ {{ preg_replace('/[\'"\[\]]/', '', trim($feature)) }}</li>
+                                    <hr />
+                                @endforeach
+                            @else
+                                <li>Pas de caractéristiques disponibles.</li>
+                            @endif
+                        </ul>
+                        <button class="cta-button">Iniziate subito !</button>
+                    </div>
+                @endforeach
+
+
+            </div>
         </div>
     </div>
     <!-- Categories Section End -->
@@ -312,9 +346,8 @@
                 </div>
                 <div class="col-lg-6 padding-0 col-md-12">
                     <div class="img-part">
-        
-                            <img class="" src="{{ asset('assets/images/about/permis.webp') }}"
-                            alt="About Image" />
+
+                        <img class="" src="{{ asset('assets/images/about/permis.webp') }}" alt="About Image" />
                     </div>
                 </div>
             </div>

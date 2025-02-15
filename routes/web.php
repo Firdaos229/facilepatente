@@ -8,6 +8,7 @@ use App\Http\Controllers\TemoignageController;
 use App\Models\User;
 use App\Http\Controllers\SerialNumberController;
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\PricingController;
 
 
 
@@ -117,3 +118,21 @@ Route::delete('/delete/{cours}', [CoursController::class, 'destroy'])->name('cou
 
 Route::PUT('/update/image/{image}', [CoursController::class, 'updateimage'])->name('image.update');
 Route::get('/edit/image/cours/{cours}', [CoursController::class, 'editimage'])->name('cours.edit.image');
+
+
+//pour les tarifs
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('admin/pricings', PricingController::class);
+});
+// Route pour afficher la liste des tarifs
+Route::get('/pricings', [PricingController::class, 'index'])->name('pricings.index');
+// Route pour afficher le formulaire d'ajout d'un tarif
+Route::get('/pricings/create', [PricingController::class, 'create'])->name('pricings.create');
+// Route pour enregistrer un nouveau tarif
+Route::post('/pricings', [PricingController::class, 'store'])->name('pricings.store');
+// Route pour afficher le formulaire d'édition d'un tarif
+Route::get('/pricings/{id}/edit', [PricingController::class, 'edit'])->name('pricings.edit');
+// Route pour mettre à jour un tarif existant
+Route::put('/pricings/{id}', [PricingController::class, 'update'])->name('pricings.update');
+// Route pour supprimer un tarif
+Route::delete('/pricings/{id}', [PricingController::class, 'destroy'])->name('pricings.destroy');
