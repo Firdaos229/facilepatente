@@ -2,10 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\temoignages;
+use App\Models\Temoignages;
 use App\Models\Pricing;
-use App\Models\Cours;
-use Illuminate\Routing\Route;
+use App\Models\Course;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-
     /**
      * Bootstrap any application services.
      */
@@ -26,18 +24,19 @@ class AppServiceProvider extends ServiceProvider
     {
         // Composer pour partager des données avec toutes les vues
         view()->composer('*', function ($view) {
-            $cours = Cours::with('images')
-                ->Orderby('id', 'desc')
-                ->inRandomOrder()
-                ->paginate(12);
+            // Récupérer les cours avec la relation 'images'
 
+            $courses = Course::all();
+
+            // Récupérer tous les prix
             $pricings = Pricing::all();
 
-            $temoignages = temoignages::orderBy('created_at', 'desc')->get();
+            // Récupérer tous les témoignages
+            $temoignages = Temoignages::orderBy('created_at', 'desc')->get();
 
             // Passer les données à toutes les vues
             $view->with('temoignages', $temoignages)
-                ->with('cours', $cours)
+                ->with('courses', $courses) // Correction ici
                 ->with('pricings', $pricings);
         });
     }

@@ -24,15 +24,15 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5120',
             'total_courses' => 'required|integer',
         ]);
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $imagePath = $request->file('image')->store('public/courses');
+            // $imagePath = $request->file('image')->store('public/courses');
             // Vous pouvez maintenant enregistrer $imagePath dans votre base de données
-            
-        $imagePath = $request->file('image')->store('courses_images', 'public');
+
+            $imagePath = $request->file('image')->store('courses_images', 'public');
         }
 
         Course::create([
@@ -55,7 +55,7 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'nullable|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5120',
             'total_courses' => 'required|integer',
         ]);
 
@@ -80,7 +80,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($id);
         $course->delete();
 
-        return redirect()->route('index')
+        return redirect()->route('cours.index')
             ->with('success', 'Il corso è stato eliminato con successo.');
     }
 }

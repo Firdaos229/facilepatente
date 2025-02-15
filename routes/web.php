@@ -7,7 +7,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TemoignageController;
 use App\Models\User;
 use App\Http\Controllers\SerialNumberController;
-use App\Http\Controllers\CoursController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CourseController;
 
@@ -136,7 +135,7 @@ Route::delete('/pricings/{id}', [PricingController::class, 'destroy'])->name('pr
 
 
 
-Route::get('/cours/create', [CoursController::class, 'create'])->name('cours.create');
+Route::get('/cours/create', [CourseController::class, 'create'])->name('cours.create');
 Route::post('/cours/store', [CourseController::class, 'store'])->name('cours.store'); // Sauvegarde d'un cours
 Route::get('/cours/edit/{id}', [CourseController::class, 'edit'])->name('cours.edit'); // Formulaire pour modifier un cours
 Route::put('/cours/update/{id}', [CourseController::class, 'update'])->name('cours.update'); // Mise à jour d'un cours

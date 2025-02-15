@@ -30,12 +30,12 @@
                 </div>
             </div>
             <div class="row grid">
-                @foreach ($cours as $course)
+                @foreach ($courses as $course)
                     <div class="col-lg-3 col-md-6 grid-item filter1">
                         <div class="courses-item mb-30">
                             <div class="img-part">
-                                @if ($course->images->isNotEmpty())
-                                    <img src="{{ asset('storage/' . $course->images->first()->filename) }}" alt="{{ $course->title }}" />
+                                @if (!empty($course->image))
+                                    <img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->title }}" />
                                 @else
                                     <img src="{{ asset('assets/images/default-course.jpg') }}" alt="Image par défaut" />
                                 @endif
@@ -60,8 +60,9 @@
                         </div>
                     </div>
                 @endforeach
+
             </div>
-            
+
 
             <div class="row grid">
                 <div class="col-lg-3 col-md-6 grid-item filter1">
@@ -210,8 +211,7 @@
             <div class="row">
                 <div class="col-lg-6 padding-0 col-md-12">
                     <div class="img-part">
-                        <img class="" src="{{ asset('assets/images/about/permis.webp') }}"
-                            alt="About Image" />
+                        <img class="" src="{{ asset('assets/images/about/permis.webp') }}" alt="About Image" />
                     </div>
                 </div>
                 <div class="col-lg-6 padding-0 col-md-12 md-mb-40">

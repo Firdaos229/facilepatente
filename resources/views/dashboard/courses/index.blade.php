@@ -17,8 +17,10 @@
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}" class="breadcrumb-link">Pannello di controllo</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Gestione del corso</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"
+                                        class="breadcrumb-link">Pannello di controllo</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Gestione del corso</a>
+                                </li>
                                 <li class="breadcrumb-item active" aria-current="page">Elenco dei corsi</li>
                             </ol>
                         </nav>
@@ -47,13 +49,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cours as $course)
+                                    @foreach ($courses as $course)
                                         <tr data-entry-id="{{ $course->id }}">
                                             <td>{{ $course->id }}</td>
                                             <td>
                                                 <div class="m-r-10">
-                                                    @if ($course->images->isNotEmpty())  
-                                                        <img src="{{ asset('storage/' . $course->images->first()->filename) }}" class="rounded" alt="{{ $course->title }}" width="45">
+                                                    @if (!empty($course->image))
+                                                        <img src="{{ asset('storage/' . $course->image) }}" class="rounded"
+                                                            alt="{{ $course->title }}" width="45">
                                                     @else
                                                         <p>Nessuna immagine disponibile per questo corso.</p>
                                                     @endif
@@ -63,12 +66,16 @@
                                             <td>{{ $course->total_courses }}</td>
                                             <td>
                                                 <div class="dropdown float-right">
-                                                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="true">
+                                                    <a href="#" class="dropdown-toggle card-drop"
+                                                        data-toggle="dropdown" aria-expanded="true">
                                                         <i class="mdi mdi-dots-vertical"></i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="{{ route('cours.edit', $course->id) }}" class="ml-4 btn btn-info">Per modificare</a>
-                                                        <form action="{{ route('cours.destroy', $course->id) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce cours ?')" method="POST" class="mt-2">
+                                                        <a href="{{ route('cours.edit', $course->id) }}"
+                                                            class="ml-4 btn btn-info">Per modificare</a>
+                                                        <form action="{{ route('cours.destroy', $course->id) }}"
+                                                            onsubmit="return confirm('Voulez-vous vraiment supprimer ce cours ?')"
+                                                            method="POST" class="mt-2">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Eliminare</button>

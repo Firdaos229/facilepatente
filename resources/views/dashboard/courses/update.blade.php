@@ -69,19 +69,21 @@
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <input type="file" name="image" class="form-control input-md inputNew"
                                         size="18" id="image">
-                                    @if ($course->images->isNotEmpty())
+
+                                    @if (!empty($course->image))
                                         <p>Immagine attuale:</p>
-                                        <img src="{{ asset('storage/' . $course->images->first()->filename) }}"
-                                            class="rounded" alt="{{ $course->title }}" width="45">
+                                        <img src="{{ asset('storage/' . $course->image) }}" class="rounded"
+                                            alt="{{ $course->title }}" width="45">
                                     @endif
                                 </div>
+
                             </div>
 
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                     <button type="submit" class="btn btn-space btn-primary">Modifica il corso</button>
-                                    <a href="{{ route('cours.index') }}"
-                                        class="btn btn-space btn-secondary text-white">Vedi tutti i corsi</a>
+                                    <a href="{{ route('cours.index') }}" class="btn btn-space btn-secondary text-white">Vedi
+                                        tutti i corsi</a>
                                 </div>
                             </div>
                         </form>
