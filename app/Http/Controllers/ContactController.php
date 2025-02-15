@@ -44,7 +44,7 @@ class ContactController extends Controller
     public function markAsRead($id)
     {
         $message = Message::findOrFail($id);
-        $message->status = 'read'; 
+        $message->status = 'read';
         $message->save();
 
         return redirect()->back()->with('success', 'Message marqué comme lu.');
@@ -54,6 +54,7 @@ class ContactController extends Controller
     {
         $message = Message::findOrFail($id);
         $message->delete();
+
 
         return redirect()->back()->with('success', 'Message supprimé.');
     }

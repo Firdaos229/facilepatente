@@ -75,7 +75,7 @@
                             @endif
                         </div>
 
-                        <form id="contact-form" method="post" action="{{ route('contact.store') }}"
+                        <form method="post" action="{{ route('contact.store') }}"
                             enctype="multipart/form-data">
                             @csrf
                             <fieldset>

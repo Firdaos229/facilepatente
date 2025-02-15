@@ -315,7 +315,8 @@
                         <div class="sec-title3">
                             <h2 class="title white-color">Contattateci !</h2>
                         </div>
-                        <form id="contact-form" method="post" action="">
+                        <form method="post" action="{{ route('contact.store') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6 mb-30 col-md-12">
                                     <input class="from-control" type="text" id="name" name="name"
