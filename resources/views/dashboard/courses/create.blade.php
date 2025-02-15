@@ -41,7 +41,7 @@
                     @endif
 
                     <div class="card-body">
-                        <form action="{{ route('storeCours') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('cours.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -63,14 +63,15 @@
                             <div class="form-group row">
                                 <label class="col-12 col-sm-3 col-form-label text-sm-right">Immagini del corso</label>
                                 <div class="col-12 col-sm-8 col-lg-6">
-                                    <input type="file" name="image[]" class="form-control" multiple>
+                                    <input type="file" name="image" class="form-control input-md inputNew"
+                                        size="18" id="image" required>
                                 </div>
                             </div>
 
                             <div class="form-group row text-right">
                                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                     <button type="submit" class="btn btn-space btn-primary">Crea il corso</button>
-                                    <a href="{{ route('displayCourses') }}"
+                                    <a href="{{ route('cours.index') }}"
                                         class="btn btn-space btn-secondary text-white">Vedi tutti i corsi</a>
                                 </div>
                             </div>

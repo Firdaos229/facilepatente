@@ -29,7 +29,7 @@
 
         <div class="row">
             <button class="btn btn-space btn-primary mb-3">
-                <a href="{{ route('createCours') }}" class="text-white">Aggiungi un nuovo corso</a>
+                <a href="{{ route('cours.create') }}" class="text-white">Aggiungi un nuovo corso</a>
             </button>
             <div class="col-lg-12">
                 <div class="card">
@@ -52,7 +52,7 @@
                                             <td>{{ $course->id }}</td>
                                             <td>
                                                 <div class="m-r-10">
-                                                    @if ($course->images->isNotEmpty())
+                                                    @if ($course->images->isNotEmpty())  
                                                         <img src="{{ asset('storage/' . $course->images->first()->filename) }}" class="rounded" alt="{{ $course->title }}" width="45">
                                                     @else
                                                         <p>Nessuna immagine disponibile per questo corso.</p>
@@ -67,7 +67,7 @@
                                                         <i class="mdi mdi-dots-vertical"></i>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="{{ route('cours.update', $course->id) }}" class="ml-4 btn btn-info">Per modificare</a>
+                                                        <a href="{{ route('cours.edit', $course->id) }}" class="ml-4 btn btn-info">Per modificare</a>
                                                         <form action="{{ route('cours.destroy', $course->id) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce cours ?')" method="POST" class="mt-2">
                                                             @csrf
                                                             @method('DELETE')
@@ -85,4 +85,6 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+
+@endsection

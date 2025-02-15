@@ -149,7 +149,8 @@
                 </div>
             </div>
             <div class="pricing-container">
-                @foreach ($pricings->take(4) as $pricing) <!-- Limite à 4 prix -->
+                @foreach ($pricings->take(4) as $pricing)
+                    <!-- Limite à 4 prix -->
                     <div class="pricing-card">
                         <div class="header">
                             <h2 class="title">{{ $pricing->title }}</h2>
@@ -167,7 +168,7 @@
                                     ? explode(',', $pricing->features)
                                     : $pricing->features;
                             @endphp
-            
+
                             @if (count($features) > 0)
                                 @foreach ($features as $feature)
                                     <!-- Suppression uniquement des crochets et guillemets -->
@@ -182,7 +183,7 @@
                     </div>
                 @endforeach
             </div>
-            
+
 
             <div class="col-lg-12 text-center pt-45">
                 <a class="readon green-btn" href="{{ route('tarif') }}">Vedi di più... </a>

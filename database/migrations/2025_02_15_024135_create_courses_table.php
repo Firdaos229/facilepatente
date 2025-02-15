@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cours', function (Blueprint $table) {
-            $table->id(); 
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id();
             $table->string('title');
-            $table->integer('total_courses')->default(0);
-
-            $table->string('slug');
+            $table->string('image'); // Stocker le chemin de l'image
+            $table->integer('total_courses'); // Nombre total de cours
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cours');
+        Schema::dropIfExists('courses');
     }
 };

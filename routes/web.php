@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Http\Controllers\SerialNumberController;
 use App\Http\Controllers\CoursController;
 use App\Http\Controllers\PricingController;
+use App\Http\Controllers\CourseController;
 
 
 
@@ -102,22 +103,18 @@ Route::post('/messages/{id}/mark-as-read', [ContactController::class, 'markAsRea
 Route::delete('/messages/{id}', [ContactController::class, 'delete'])->name('messages.delete');
 
 // Routes pour les cours
-Route::resource('courses', CoursController::class);
+// Route::resource('courses', CoursController::class);
 
-Route::get('/cours', [CoursController::class, 'index'])->name('displayCourses');
-Route::get('/cours/create', [CoursController::class, 'create'])->name('createCours');
-Route::post('/cours/store', [CoursController::class, 'store'])->name('storeCours');
+// Route::get('/cours', [CoursController::class, 'index'])->name('displayCourses');
+// Route::get('/cours/create', [CoursController::class, 'create'])->name('createCours');
+// Route::post('/cours/store', [CoursController::class, 'store'])->name('storeCours');
 
+// Route::get('/edit/cours/{cours}', [CoursController::class, 'edit'])->name('cours.update');
 
+// Route::delete('/delete/{cours}', [CoursController::class, 'destroy'])->name('cours.destroy');
 
-Route::get('/edit/cours/{cours}', [CoursController::class, 'edit'])->name('cours.update');
-
-Route::delete('/delete/{cours}', [CoursController::class, 'destroy'])->name('cours.destroy');
-
-
-
-Route::PUT('/update/image/{image}', [CoursController::class, 'updateimage'])->name('image.update');
-Route::get('/edit/image/cours/{cours}', [CoursController::class, 'editimage'])->name('cours.edit.image');
+// Route::PUT('/update/image/{image}', [CoursController::class, 'updateimage'])->name('image.update');
+// Route::get('/edit/image/cours/{cours}', [CoursController::class, 'editimage'])->name('cours.edit.image');
 
 
 //pour les tarifs
@@ -136,3 +133,21 @@ Route::get('/pricings/{id}/edit', [PricingController::class, 'edit'])->name('pri
 Route::put('/pricings/{id}', [PricingController::class, 'update'])->name('pricings.update');
 // Route pour supprimer un tarif
 Route::delete('/pricings/{id}', [PricingController::class, 'destroy'])->name('pricings.destroy');
+
+
+
+Route::get('/cours/create', [CoursController::class, 'create'])->name('cours.create');
+Route::post('/cours/store', [CourseController::class, 'store'])->name('cours.store'); // Sauvegarde d'un cours
+Route::get('/cours/edit/{id}', [CourseController::class, 'edit'])->name('cours.edit'); // Formulaire pour modifier un cours
+Route::put('/cours/update/{id}', [CourseController::class, 'update'])->name('cours.update'); // Mise à jour d'un cours
+Route::delete('/cours/destroy/{id}', [CourseController::class, 'destroy'])->name('cours.destroy'); // Suppression d'un cours
+Route::get('/cours', [CourseController::class, 'index'])->name('cours.index'); // Liste des cours
+
+
+
+
+// Afficher la page de modification d'un cours
+Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+
+// Soumettre la mise à jour d'un cours
+Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');

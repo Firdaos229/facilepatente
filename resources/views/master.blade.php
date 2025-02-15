@@ -120,11 +120,11 @@
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('createCours') }}"><i
+                                            <a class="nav-link" href="{{ route('cours.create') }}"><i
                                                     class="fas fa-plus-circle"></i>Aggiungi un corso</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{ route('displayCourses') }}"><i
+                                            <a class="nav-link" href="{{ route('cours.index') }}"><i
                                                     class="fas fa-list"></i>Elenco di
                                                 corso</a>
                                         </li>
