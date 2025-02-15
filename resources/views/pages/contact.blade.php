@@ -21,15 +21,19 @@
     <!-- Contact Section Start -->
     <div class="contact-page-section pt-100 pb-100 md-pt-70 md-pb-70">
         <div class="container">
+            @php
+                $footer = App\Models\FooterSetting::first();
+            @endphp
+
             <div class="row rs-contact-box mb-90 md-mb-50">
-                <div class="col-lg-4 col-md-12-4 lg-pl-0 sm-mb-30 md-mb-30">
+                <div class="col-lg-4 col-md-12 lg-pl-0 sm-mb-30 md-mb-30">
                     <div class="address-item">
                         <div class="icon-part">
                             <img src="{{ asset('assets/images/contact/icon/1.png') }}" alt="" />
                         </div>
                         <div class="address-text">
                             <span class="label">Indirizzo</span>
-                            <span class="des">228-5 Main Street, Georgia, USA</span>
+                            <span class="des">{{ $footer->address ?? 'Indirizzo non definito' }}</span>
                         </div>
                     </div>
                 </div>
@@ -40,7 +44,8 @@
                         </div>
                         <div class="address-text">
                             <span class="label">E-mail</span>
-                            <span class="des"><a href="mailto:info@rstheme.com">info@rstheme.com</a></span>
+                            <span class="des"><a
+                                    href="mailto:{{ $footer->email ?? '#' }}">{{ $footer->email ?? 'E-mail non definita' }}</a></span>
                         </div>
                     </div>
                 </div>
@@ -51,11 +56,13 @@
                         </div>
                         <div class="address-text">
                             <span class="label">Telefono</span>
-                            <span class="des"><a href="">(+088)589-8745</a></span>
+                            <span class="des"><a
+                                    href="tel:{{ $footer->phone ?? '#' }}">{{ $footer->phone ?? 'Telefono non definito' }}</a></span>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="row align-items-center">
                 <div class="col-lg-12 pl-60 md-pl-15">
                     <div class="contact-comment-box">
@@ -75,8 +82,7 @@
                             @endif
                         </div>
 
-                        <form method="post" action="{{ route('contact.store') }}"
-                            enctype="multipart/form-data">
+                        <form method="post" action="{{ route('contact.store') }}" enctype="multipart/form-data">
                             @csrf
                             <fieldset>
                                 <div class="row">

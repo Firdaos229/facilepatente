@@ -10,6 +10,7 @@ use App\Http\Controllers\SerialNumberController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DriverLicenseController; 
+use App\Http\Controllers\FooterController; 
 
 
 
@@ -147,3 +148,6 @@ Route::delete('/driverLicenseMessages/{id}', [DriverLicenseController::class, 'd
 
 
 Route::get('/admin/driver-license', [DriverLicenseController::class, 'index'])->name('dashboard.admin.driver-license');
+
+Route::get('/dashboard/footer', [FooterController::class, 'edit'])->name('footer.edit');
+Route::post('/dashboard/footer', [FooterController::class, 'update'])->name('footer.update');

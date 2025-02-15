@@ -172,7 +172,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
+                    {{-- <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                         <h3 class="widget-title">Contatti</h3>
                         <ul class="address-widget">
                             <li>
@@ -194,7 +194,38 @@
                                 </div>
                             </li>
                         </ul>
+                    </div> --}}
+
+                    @php
+                        $footer = App\Models\FooterSetting::first();
+                    @endphp
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
+                        <h3 class="widget-title">Contatti</h3>
+                        <ul class="address-widget">
+                            <li>
+                                <i class="flaticon-location"></i>
+                                <div class="desc">
+                                    {{ $footer->address ?? 'Indirizzo non definito' }}
+                                </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-call"></i>
+                                <div class="desc">
+                                    <a
+                                        href="tel:{{ $footer->phone ?? '#' }}">{{ $footer->phone ?? 'Telefono non definito' }}</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-email"></i>
+                                <div class="desc">
+                                    <a
+                                        href="mailto:{{ $footer->email ?? '#' }}">{{ $footer->email ?? 'E-mail non definita' }}</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+
                     <div class="col-lg-3 col-md-12 col-sm-12 pl-50 md-pl-15 footer-widget md-mb-50">
                         <h3 class="widget-title">I nostri servizi</h3>
                         <ul class="site-map">

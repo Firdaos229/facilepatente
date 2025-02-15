@@ -189,7 +189,12 @@
                                     </ul>
                                 </div>
                             </li>
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('footer.edit') }}">
+                                    <i class="fa fa-cogs"></i> Impostazioni del piè di pagina
+                                </a>
+                            </li>
+                            
 
 
                             <li class="nav-item ">
